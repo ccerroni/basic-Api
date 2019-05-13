@@ -7,6 +7,7 @@ exports.ensureAuth = function(req, res, next) {
     return res.status(403).send({ message: 'The request has not security header'});
   }
   
+  //cleaning token
   let token = req.headers.authorization.replace(/['"]+/g, '');
   
   try {
